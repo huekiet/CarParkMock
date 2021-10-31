@@ -1,0 +1,22 @@
+<div class="wrapper h-100">
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <ul class="list-unstyled components">
+      <p>Car park manager</p>
+      <li *ngFor="let menu of menu">
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleCollapse(menu.title)">
+          <i [class]="menu.icon"></i>
+          {{ menu.title }}
+        </a>
+        <ul [ngClass]="menu.collapse? 'collapse list-unstyled': 'list-unstyled'">
+          <li *ngFor="let submenu of menu.subMenu">
+            <a [routerLink]="submenu.route">
+              <i [class]="submenu.icon"></i>
+              {{ submenu.title }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

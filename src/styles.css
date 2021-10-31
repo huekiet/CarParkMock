@@ -1,1 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+
+.navbar {
+  height: 45px;
+  border-bottom: 1px solid #bcbaba;
+}
+
+.user-content {
+  height: 90vh;
+}
+
+
+.form-control {
+  border-radius: 0 !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: #333;
+}
+
+.btn {
+  border-radius: 0 !important;
+}
+
+.validate-error {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.input-auth {
+  margin: 10px 0;
+}
+
+.float-right {
+  float: right
+}
+
+.user-search-input {
+  height: 40px;
+  width: 100%;
+}
+
+.form-label {
+  display: inline-block;
+  width: 200px;
+  font-weight: 450;
+}
+.form-input {
+  display: inline-block;
+  width: 300px;
+}
+
+.form-input input {
+  width: 100%;
+}
+
+.p-confirm-popup {
+  box-shadow: 0 3px 4px -2px #0003, 0 10px 20px 3px #00000024, 0 3px 23px 3px #0000001f;
+}
+
+.table-action {
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.table-action.view {
+  color:rgb(71, 71, 235);
+}
+
+.table-action.view:hover {
+  color: rgb(169, 169, 240)
+}
+
+.table-action.delete {
+  color: rgb(230, 58, 58);
+}
+
+.table-action.delete:hover {
+  color: rgb(233, 130, 130);
+}
+
+.table-container {
+  height: 100%;
+}
+
+.p-inputgroup-addon.date-addon {
+  width: 100px;
+}
+
+
+@media screen and (min-width: 1200px)  {
+  .side-bar-wrapper {
+    width: 270px !important;
+  }
+  .table-wrapper {
+    width: calc(100% - 280px) !important;
+  }
+}

@@ -1,0 +1,176 @@
+<div class="card p-3 mt-2">
+  <h4>{{ formLabel }}</h4>
+
+  <form [formGroup]="createOrUpdateForm">
+    <div class="mt-2">
+      <div class="form-label">Fullname<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter full name"
+          pInputText
+          formControlName="employeeName"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Phone number<span class="text-danger">(*)</span>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter phone number"
+          pInputText
+          formControlName="employeePhone"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="createOrUpdateForm.controls.employeePhone.errors?.pattern"
+      >
+        Phone number includes only numbers and must be between 7 and 10
+        characters
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Date of birth<span class="text-danger">(*)</span>
+      </div>
+      <div class="form-input">
+        <div class="p-field p-col-12">
+          <p-calendar
+            formControlName="employeeBirthdate"
+            [monthNavigator]="true"
+            [yearNavigator]="true"
+            yearRange="1900:2030"
+            inputId="birthday_picker"
+            inputStyleClass="w-100"
+            styleClass="w-100"
+            dateFormat="yy-mm-dd"
+            [showIcon]="true"
+            showButtonBar="true"
+            dataType="string"
+          ></p-calendar>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Sex<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <p-radioButton
+          name="sex"
+          label="Male"
+          value="1"
+          formControlName="sex"
+          labelStyleClass="mr-1"
+        ></p-radioButton>
+        <p-radioButton
+          name="sex"
+          label="Female"
+          value="0"
+          formControlName="sex"
+        ></p-radioButton>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Address</div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter address"
+          pInputText
+          formControlName="employeeAddress"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Email</div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter email"
+          pInputText
+          formControlName="employeeEmail"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Account<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter account"
+          pInputText
+          formControlName="account"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Password<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="password"
+          placeholder="Enter password"
+          pInputText
+          formControlName="password"
+        />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="createOrUpdateForm.controls.password.errors?.pattern"
+      >
+        Password must include uppercase, lowercase letters, numbers and at least
+        6 characters
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Department<span class="text-danger">(*)</span>
+      </div>
+      <p-dropdown
+        [options]="departmentOption"
+        formControlName="department"
+        placeholder="Choose department"
+        optionLabel="label"
+        optionValue="value"
+      ></p-dropdown>
+    </div>
+
+    <div class="toolbar mt-5 ml-5">
+      <button
+        pButton
+        type="button"
+        icon="pi pi-angle-double-left"
+        label="Back"
+        class="p-button-info mr-1"
+        (click)="back()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-replay"
+        label="Reset"
+        class="p-button-warning mr-1"
+        (click)="reset()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-plus"
+        [label]="formLabel"
+        class="p-button-success"
+        [disabled]="createOrUpdateForm.invalid"
+        (click)="submit()"
+      ></button>
+    </div>
+  </form>
+</div>

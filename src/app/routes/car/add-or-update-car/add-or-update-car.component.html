@@ -1,0 +1,99 @@
+<div class="card p-3 mt-2">
+  <h4>{{ formLabel }}</h4>
+
+  <form [formGroup]="createOrUpdateForm">
+    <div class="mt-2">
+      <div class="form-label">License plate<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter License plate"
+          pInputText
+          formControlName="licensePlate"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Car type<span class="text-danger"></span>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter car type"
+          pInputText
+          formControlName="carType"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Car color<span class="text-danger"></span>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter car color"
+          pInputText
+          formControlName="carColor"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Company<span class="text-danger">(*)</span>
+      </div>
+      <p-dropdown
+        [options]="companyOption"
+        formControlName="company"
+        placeholder="Choose company"
+        optionLabel="label"
+        optionValue="value"
+      ></p-dropdown>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Parking lot<span class="text-danger">(*)</span>
+      </div>
+      <p-dropdown
+        [options]="parkinglotOption"
+        formControlName="parkId"
+        placeholder="Choose parking lot"
+        optionLabel="label"
+        optionValue="value"
+      ></p-dropdown>
+    </div>
+
+    <div class="toolbar mt-5 ml-5">
+      <button
+        pButton
+        type="button"
+        icon="pi pi-angle-double-left"
+        label="Back"
+        class="p-button-info mr-1"
+        (click)="back()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-replay"
+        label="Reset"
+        class="p-button-warning mr-1"
+        (click)="reset()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-plus"
+        [label]="formLabel"
+        class="p-button-success"
+        [disabled]="createOrUpdateForm.invalid"
+        (click)="submit()"
+      ></button>
+    </div>
+  </form>
+</div>

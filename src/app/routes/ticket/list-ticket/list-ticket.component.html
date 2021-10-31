@@ -1,0 +1,80 @@
+<div class="card p-3 mt-2 table-container">
+  <div class="p-3">
+    <h5>Ticket list</h5>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+          <input
+            type="text"
+            pInputText
+            placeholder="User search"
+            class="user-search-input"
+            [(ngModel)]="userSearch"
+          />
+        </div>
+      </div>
+      <!-- <div class="col-4">
+        <p-dropdown
+          [options]="filterOption"
+          [(ngModel)]="filterChosen"
+          placeholder="FilterBy"
+          optionLabel="label"
+          optionValue="value"
+          [showClear]="true"
+        ></p-dropdown>
+        <button
+          pButton
+          type="button"
+          label="Search"
+          (click)="loadTickets(null)"
+        ></button>
+      </div> -->
+    </div>
+
+  </div>
+
+  <div class="p-2">
+    <p-table
+      [value]="tickets"
+      [totalRecords]="totalRecords"
+      [rows]="rows"
+      [showCurrentPageReport]="true"
+      [(first)]="first"
+      [paginator]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 25, 50]"
+      [lazy]="true"
+      (onLazyLoad)="loadTickets($event)"
+      [scrollable]="true"
+      scrollHeight="400px"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>No</th>
+          <th>Trip</th>
+          <th>LicensePlate</th>
+          <th>Customer</th>
+          <th>Booking time</th>
+          <th>Action</th>
+        </tr>
+      </ng-template>
+      <p-confirmPopup></p-confirmPopup>
+
+      <ng-template pTemplate="body" let-ticket>
+        <tr>
+          <td>{{ ticket.ticketId }}</td>
+          <td>{{ ticket.tripDestination }}</td>
+          <td>{{ ticket.licensePlate }}</td>
+          <td>{{ ticket.customerName }}</td>
+          <td>{{ ticket.bookingTime }}</td>
+          <td>
+              <span (click)="viewTicket(ticket.ticketId)" class="table-action view mr-1"><i class="pi pi-eye">View</i></span>
+              <span (click)="deleteTicket($event, ticket.ticketId)" class="table-action delete"><i class="pi pi-trash">Delete</i></span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

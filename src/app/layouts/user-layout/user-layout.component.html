@@ -1,0 +1,12 @@
+<div class="h-100">
+  <top-nav-bar [user]="user"></top-nav-bar>
+  <div class="row main-content w-100">
+    <div class="col-4 side-bar-wrapper h-100">
+      <side-nav-bar></side-nav-bar>
+    </div>
+    <div class="col-8 table-wrapper h-100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <about-us></about-us>
+</div>

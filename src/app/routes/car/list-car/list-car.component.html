@@ -1,0 +1,80 @@
+<div class="card p-3 mt-2 table-container">
+  <div class="p-3">
+    <h5>Car list</h5>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+          <input
+            type="text"
+            pInputText
+            placeholder="User search"
+            class="user-search-input"
+            [(ngModel)]="userSearch"
+          />
+        </div>
+      </div>
+      <div class="col-4">
+        <p-dropdown
+          [options]="filterOption"
+          [(ngModel)]="filterChosen"
+          placeholder="FilterBy"
+          optionLabel="label"
+          optionValue="value"
+          [showClear]="true"
+        ></p-dropdown>
+        <button
+          pButton
+          type="button"
+          label="Search"
+          (click)="loadCars(null)"
+        ></button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="p-2">
+    <p-table
+      [value]="cars"
+      [totalRecords]="totalRecords"
+      [rows]="rows"
+      [showCurrentPageReport]="true"
+      [(first)]="first"
+      [paginator]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 25, 50]"
+      [lazy]="true"
+      (onLazyLoad)="loadCars($event)"
+      [scrollable]="true"
+      scrollHeight="400px"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>License plate</th>
+          <th>Car type</th>
+          <th>Car color</th>
+          <th>Company</th>
+          <th>Parking lot </th>
+          <th>Action</th>
+        </tr>
+      </ng-template>
+      <p-confirmPopup></p-confirmPopup>
+
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>{{ car.licensePlate }}</td>
+          <td>{{ car.carType }}</td>
+          <td>{{ car.carColor }}</td>
+          <td>{{ car.company }}</td>
+          <td>{{ car.parkName }}</td>
+          <td>
+              <span (click)="viewCar(car.licensePlate)" class="table-action view mr-1"><i class="pi pi-eye">View</i></span>
+              <span (click)="deleteEmployee($event, car.licensePlate)" class="table-action delete"><i class="pi pi-trash">Delete</i></span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="card p-3 mt-2">
+  <h4>{{ formLabel }}</h4>
+
+  <form [formGroup]="createOrUpdateForm">
+    <div class="mt-2">
+      <div class="form-label">
+        Destination<span class="text-danger">(*)</span>
+      </div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter destination"
+          pInputText
+          formControlName="destination"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Departure time</div>
+      <div class="form-input">
+        <p-calendar
+          styleClass="w-100"
+          [timeOnly]="true"
+          formControlName="departureTime"
+        ></p-calendar>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Driver<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter driver"
+          pInputText
+          formControlName="driver"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">Car type<span class="text-danger">(*)</span></div>
+      <div class="form-input">
+        <input
+          type="text"
+          placeholder="Enter car type"
+          pInputText
+          formControlName="carType"
+        />
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Maximum online ticket<span class="text-danger">(*)</span>
+      </div>
+      <div class="form-input mr-1">
+        <p-inputNumber
+          class="w-100"
+          formControlName="maximumOnlineTicketNumber"
+          placeholder="Enter Maximum online ticket"
+          inputStyleClass="w-100"
+          styleClass="w-100"
+        >
+        </p-inputNumber>
+      </div>
+    </div>
+
+    <div class="mt-2">
+      <div class="form-label">
+        Departure date<span class="text-danger">(*)</span>
+      </div>
+      <div class="form-input">
+        <div class="p-field p-col-12">
+          <p-calendar
+            formControlName="departureDate"
+            [monthNavigator]="true"
+            [yearNavigator]="true"
+            inputId="birthday_picker"
+            inputStyleClass="w-100"
+            styleClass="w-100"
+            dateFormat="yy-mm-dd"
+            [showIcon]="true"
+            showButtonBar="true"
+            dataType="string"
+          ></p-calendar>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar mt-5 ml-5">
+      <button
+        pButton
+        type="button"
+        icon="pi pi-angle-double-left"
+        label="Back"
+        class="p-button-info mr-1"
+        (click)="back()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-replay"
+        label="Reset"
+        class="p-button-warning mr-1"
+        (click)="reset()"
+      ></button>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-plus"
+        [label]="formLabel"
+        class="p-button-success"
+        [disabled]="createOrUpdateForm.invalid"
+        (click)="submit()"
+      ></button>
+    </div>
+  </form>
+</div>
