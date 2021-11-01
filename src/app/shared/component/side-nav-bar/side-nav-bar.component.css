@@ -68,6 +68,8 @@ a, a:hover, a:focus {
     padding: 10px;
     font-size: 15px;
     display: block;
+    opacity: 0;
+    animation: fadein 0.5s both;
 }
 #sidebar ul li a:hover {
     color: #3333ad;
@@ -82,4 +84,9 @@ ul ul a {
     font-size: 13px !important;
     padding-left: 30px !important;
     background: #edf9ff;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

@@ -6,12 +6,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Employee list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/employee/list',
       },
       {
         title: 'Add employee',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/employee/create',
       },
     ],
@@ -23,12 +23,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Car list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/car/list',
       },
       {
         title: 'Add Car',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/car/create',
       },
     ],
@@ -40,12 +40,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Parking lot list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/parkinglot/list',
       },
       {
         title: 'Add Parking lot',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/parkinglot/create',
       },
     ],
@@ -57,12 +57,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Ticket list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/ticket/list',
       },
       {
         title: 'Add Ticket',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/ticket/create',
       },
     ],
@@ -74,12 +74,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Trip list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/trip/list',
       },
       {
         title: 'Add trip',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/trip/create',
       },
     ],
@@ -91,12 +91,12 @@ export const MENU = [
     subMenu: [
       {
         title: 'Booking office  list',
-        icon: 'pi pi-plus mr-1',
+        icon: 'pi pi-list mr-1',
         route: '/user/booking-office/list',
       },
       {
         title: 'Add Booking office',
-        icon: 'pi pi-list mr-1',
+        icon: 'pi pi-plus mr-1',
         route: '/user/booking-office/create',
       },
     ],

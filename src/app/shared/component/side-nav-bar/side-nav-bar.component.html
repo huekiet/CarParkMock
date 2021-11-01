@@ -3,6 +3,8 @@
   <nav id="sidebar">
     <ul class="list-unstyled components">
       <p>Car park manager</p>
+      <li><a routerLink="/user/dashboard"><i class="pi pi-book mr-1"></i>Dashboard</a></li>
+
       <li *ngFor="let menu of menu">
         <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="toggleCollapse(menu.title)">
           <i [class]="menu.icon"></i>

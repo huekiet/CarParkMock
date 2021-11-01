@@ -1,5 +1,4 @@
 import { AuthLayoutComponent } from './../layouts/auth-layout/auth-layout.component';
-import { RoleGuard } from './../guard/role.guard';
 import { UserLayoutComponent } from './../layouts/user-layout/user-layout.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -148,7 +147,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: '**', redirectTo: 'dashboard' },
     ],
-    canActivate: [AuthGuard, RoleGuard],
+    canActivate: [AuthGuard],
   },
 
   {
